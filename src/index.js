@@ -2,16 +2,25 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import MainLoader from './component/main-loader';
+//redux
+import { Provider } from 'react-redux';
+import configStore from './redux/configStore';
+import { loadPollutionData} from './redux/actions/pollution';
 
-ReactDOM.render(
+const store = configStore();
+const JSX = () => {
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<MainLoader />, rootElement);
+
+store.dispatch(loadPollutionData()).then(() => {
+  ReactDOM.render(<Jsx />, rootElement);
+})
