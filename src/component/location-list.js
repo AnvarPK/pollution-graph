@@ -9,16 +9,12 @@ const useStyles = makeStyles({
 
 const LocationList = ({ data }) => {
     const classes = useStyles();
-
     return (<div className={classes.demo} >
         <List className={classes.listItem}
-            subheader={
-                <ListSubheader component="div" >
-                    Delhi Locations:
-            </ListSubheader>
-            }
+            subheader={<ListSubheader component="div" >
+                Delhi Locations:
+                    </ListSubheader>}
         >
-            {!data && "Data not available"}
             {Object.keys(data).map((item, i) => {
                 return (<ListItem key={item}>
                     {`${i + 1}- ${item}`}

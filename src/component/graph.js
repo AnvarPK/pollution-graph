@@ -17,7 +17,7 @@ const Graph = ({ data }) => <Card  >
             <VictoryAxis
                 tickFormat={(x, i) => (i + 1)}
                 style={{ tickLabels: {fontSize:8 },axisLabel: { fill: "#5462c7"  ,fontSize:8, padding: 30 } }}
-                label="Locations ( See the Location List )"
+                label="Locations ( See the Location list )"
             />
             <VictoryAxis
                 dependentAxis
