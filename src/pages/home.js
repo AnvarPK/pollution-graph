@@ -1,20 +1,17 @@
-// import { connect } from 'react-redux'
+import DatePicker from '../component/date-picker';
+import GraphContainer from '../component/graph-container';
 
-export const Home = () => {
+import {
+    Container
+} from '@material-ui/core';
+
+export const Home = ({ }) => {
     return (
-        <div>
-            eruyiyu
-        </div>
+        <Container maxWidth="lg">
+            <DatePicker />
+            <GraphContainer />
+        </Container>
     )
 }
 
 export default Home
-// const mapStateToProps = (state) => ({
-    
-// })
-
-// const mapDispatchToProps = {
-    
-// }
-
-// export default connect(mapStateToProps, mapDispatchToProps)(home)

@@ -1,18 +1,18 @@
-import { createStore } from 'redux';
-import  Pollution from '../redux/reducers/pollution'
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import Pollution from '../redux/reducers/pollution';
+import thunk from 'redux-thunk';
 
-export default () => {
+const configStore = () => {
 
     const store = createStore(
-        Pollution
-        // combineReducers({
-        //     vehicles: vehiclesReducer,
-        //     filters: filtersReducer,
-        //     language: languageReducer
-        // })
+        combineReducers({
+            pollution: Pollution
+        }),
+        applyMiddleware(thunk)
     );
 
     return store;
 };
 
 
+export default configStore;
