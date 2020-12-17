@@ -1,5 +1,5 @@
 ### `yarn install`
 
-### `cs pollution-graph`
+### `cd pollution-graph`
 
 ### `yarn start`
